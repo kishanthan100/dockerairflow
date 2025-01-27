@@ -1,0 +1,31 @@
+[2025-01-27T11:38:04.332+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-27T11:38:04.384+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_order_ingestion.ingest_sales_order_data manual__2025-01-27T11:15:05.989484+00:00 [queued]>
+[2025-01-27T11:38:04.609+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_order_ingestion.ingest_sales_order_data manual__2025-01-27T11:15:05.989484+00:00 [queued]>
+[2025-01-27T11:38:05.054+0000] {taskinstance.py:2866} INFO - Starting attempt 8 of 8
+[2025-01-27T11:38:05.210+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): ingest_sales_order_data> on 2025-01-27 11:15:05.989484+00:00
+[2025-01-27T11:38:05.247+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'sales_order_ingestion', 'ingest_sales_order_data', 'manual__2025-01-27T11:15:05.989484+00:00', '--job-id', '62', '--raw', '--subdir', 'DAGS_FOLDER/first.py', '--cfg-path', '/tmp/tmp3cxznk__']
+[2025-01-27T11:38:05.261+0000] {standard_task_runner.py:105} INFO - Job 62: Subtask ingest_sales_order_data
+[2025-01-27T11:38:05.262+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=137) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-27T11:38:05.264+0000] {standard_task_runner.py:72} INFO - Started process 146 to run task
+[2025-01-27T11:38:06.101+0000] {task_command.py:467} INFO - Running <TaskInstance: sales_order_ingestion.ingest_sales_order_data manual__2025-01-27T11:15:05.989484+00:00 [running]> on host 58cdeff08d1e
+[2025-01-27T11:38:06.633+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_order_ingestion' AIRFLOW_CTX_TASK_ID='ingest_sales_order_data' AIRFLOW_CTX_EXECUTION_DATE='2025-01-27T11:15:05.989484+00:00' AIRFLOW_CTX_TRY_NUMBER='8' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-27T11:15:05.989484+00:00'
+[2025-01-27T11:38:06.637+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-01-27T11:38:06.641+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-01-27T11:38:06.643+0000] {logging_mixin.py:190} INFO - Current task name:ingest_sales_order_data state:running start_date:2025-01-27 11:38:04.385894+00:00
+[2025-01-27T11:38:06.648+0000] {logging_mixin.py:190} INFO - Dag name:sales_order_ingestion and current dag run status:running
+[2025-01-27T11:38:06.658+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-27T11:38:09.161+0000] {logging_mixin.py:190} INFO - response is  <Response [200]>
+[2025-01-27T11:38:10.034+0000] {logging_mixin.py:190} INFO - response is  <Response [200]>
+[2025-01-27T11:41:31.313+0000] {logging_mixin.py:190} INFO - All sales order data saved. Total records: 749
+[2025-01-27T11:41:31.332+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-27T11:41:31.355+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-27T11:41:31.356+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=sales_order_ingestion, task_id=ingest_sales_order_data, run_id=manual__2025-01-27T11:15:05.989484+00:00, execution_date=20250127T111505, start_date=20250127T113804, end_date=20250127T114131
+[2025-01-27T11:41:31.388+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-01-27T11:41:31.389+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-01-27T11:41:31.390+0000] {logging_mixin.py:190} INFO - Dag name:sales_order_ingestion queued_at:2025-01-27 11:15:06.717134+00:00
+[2025-01-27T11:41:31.391+0000] {logging_mixin.py:190} INFO - Task hostname:58cdeff08d1e operator:PythonOperator
+[2025-01-27T11:41:31.479+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-27T11:41:31.508+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-27T11:41:31.511+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
